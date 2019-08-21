@@ -1,10 +1,18 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+
 import "./bootstrap.min.css"
 import "./layout.css"
 
-const Layout = ({ children }) => <React.Fragment>{children}</React.Fragment>
+import Navbar from "./Globals/Navbar"
+
+const Layout = ({ children }) => (
+  <React.Fragment>
+    <Navbar></Navbar>
+    {children}
+  </React.Fragment>
+)
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
