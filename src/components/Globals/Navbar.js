@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import { Link } from "gatsby"
 import logo from "../../images/logo.svg"
 import { FaCartArrowDown } from "react-icons/fa"
+import { FaBars } from "react-icons/fa"
 
 export default class Navbar extends Component {
   state = {
@@ -29,13 +30,13 @@ export default class Navbar extends Component {
         })
       : this.setState({
           navBarOpen: true,
-          css: "collapse navbar-collapse",
+          css: "collapse navbar-collapse show",
         })
   }
 
   render() {
     return (
-      <nav className="navbar navbar-expand-sm bg-light navbar-light">
+      <nav className="navbar navbar-expand-sm">
         <Link to="/" className="navbar-brand">
           <img src={logo} alt="" />
           {/* https://www.iconfinder.com/icons/185113/coffee_streamline_icon
@@ -47,7 +48,7 @@ https://www.iconfinder.com/webalys */}
           type="button"
           onClick={this.navbarHandler}
         >
-          <span className="navbar-toggler-icon"></span>
+          <FaBars className="bars"></FaBars>
         </button>
         <div className={this.state.css}>
           <ul className="navbar-nav mx-auto">
